@@ -3,7 +3,13 @@ const cookieParser = require("cookie-parser")
 const cors = require("cors")
 
 const app = express()
+app.get("/", (req, res) => {
+  res.send("Backend Running");
+});
 
+app.get("/test", (req, res) => {
+  res.send("Test Route Working");
+});
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
